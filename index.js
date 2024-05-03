@@ -2,17 +2,17 @@ const express = require('express');
 const app = express();
 const port = 3002;
 
-//pemanggilan request body parse
+
 const bodyParser = require('body-parser')
-//pemanggilan file config.js di index.js
+
 const db = require('./config.js')
 
 const response = require('./request.js')
 
-//penggunaan body parse
+
 app.use(bodyParser.json());
 
-//tambahkan route get data
+
 app.get('/mahasiswa', (req, res) => {
    const sql = 'SELECT * FROM tb_mahasiswa'
    db.query(sql, (error, result)=>{
@@ -20,9 +20,9 @@ app.get('/mahasiswa', (req, res) => {
    })
 })
 
-app.get('/', (req, res) => {
-    res.send("selamat datang di web API service")
- })
+app.get("/", (req, res) => {
+    response(200, "welcome to api", "Selamat datang di api service", res);
+  });
 
 app.get('/mahasiswa/:npm',(req,res) => {
     const npm = req.params.npm
