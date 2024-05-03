@@ -4,10 +4,10 @@ const mysql = require('mysql')
 
 //variabel koneksi untuk database
 const db = mysql.createConnection({
-    host:'localhost',
-    user:'root',
-    password:'',
-    database:'database_beasiswa'
+    host:'sql6.freesqldatabase.com',
+    user:'sql6703776',
+    password:'sql6703776',
+    database:'seVnyqb3DZ'
 })
 
 //kirimkan variable keluar untuk digunakan dliuar file
