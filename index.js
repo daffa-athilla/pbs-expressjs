@@ -20,6 +20,10 @@ app.get('/mahasiswa', (req, res) => {
    })
 })
 
+app.get('/', (req, res) => {
+    response(200,result,'Selamat datang di API service')
+ })
+
 app.get('/mahasiswa/:npm',(req,res) => {
     const npm = req.params.npm
     const sql = `SELECT * FROM tb_mahasiswa where npm = '${npm}'`
